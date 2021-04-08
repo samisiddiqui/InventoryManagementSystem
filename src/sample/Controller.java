@@ -8,7 +8,6 @@ import javafx.stage.Stage;
 public class Controller {
     @FXML private Button ExitButton;
 
-
     public void ExitProgram(ActionEvent actionEvent) {
         Stage close = (Stage) ExitButton.getScene().getWindow();
         close.close();

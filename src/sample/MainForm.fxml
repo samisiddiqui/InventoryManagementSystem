@@ -68,9 +68,9 @@
             </TableView>
             <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" text="Add" />
-                  <Button mnemonicParsing="false" text="Modify" />
-                  <Button mnemonicParsing="false" text="Delete" />
+                  <Button fx:id="AddPartButton" mnemonicParsing="false" onAction="#CallAddPartForm" text="Add" />
+                  <Button fx:id="ModifyPartButton" mnemonicParsing="false" text="Modify" />
+                  <Button fx:id="DeletePartButton" mnemonicParsing="false" text="Delete" />
                </children>
             </HBox>
          </children>
@@ -101,9 +101,9 @@
             </TableView>
             <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" text="Add" />
-                  <Button mnemonicParsing="false" text="Modify" />
-                  <Button mnemonicParsing="false" text="Delete" />
+                  <Button fx:id="AddProductButton" mnemonicParsing="false" text="Add" />
+                  <Button fx:id="ModifyProductButton" mnemonicParsing="false" text="Modify" />
+                  <Button fx:id="DeleteProductButton" mnemonicParsing="false" text="Delete" />
                </children>
             </HBox>
          </children>

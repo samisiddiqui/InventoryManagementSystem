@@ -60,17 +60,17 @@
             </HBox>
             <TableView prefHeight="200.0" prefWidth="200.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-                  <TableColumn prefWidth="75.0" text="C2" />
-                  <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn prefWidth="75.0" text="Part ID" />
+                <TableColumn prefWidth="75.0" text="Part Name" />
+                  <TableColumn prefWidth="119.0" text="Inventory Level" />
+                  <TableColumn prefWidth="138.0" text="Price/Cost per Unit" />
               </columns>
             </TableView>
             <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" text="Add" />
-                  <Button mnemonicParsing="false" text="Modify" />
-                  <Button mnemonicParsing="false" text="Delete" />
+                  <Button fx:id="AddPartButton" mnemonicParsing="false" onAction="#CallAddPartForm" text="Add" />
+                  <Button fx:id="ModifyPartButton" mnemonicParsing="false" text="Modify" />
+                  <Button fx:id="DeletePartButton" mnemonicParsing="false" text="Delete" />
                </children>
             </HBox>
          </children>
@@ -93,17 +93,17 @@
             </HBox>
             <TableView prefHeight="200.0" prefWidth="200.0">
                <columns>
-                  <TableColumn prefWidth="75.0" text="C1" />
-                  <TableColumn prefWidth="75.0" text="C2" />
-                  <TableColumn prefWidth="75.0" text="C2" />
-                  <TableColumn prefWidth="75.0" text="C2" />
+                  <TableColumn prefWidth="75.0" text="Product ID" />
+                  <TableColumn prefWidth="97.0" text="Product Name" />
+                  <TableColumn prefWidth="103.0" text="Inventory Level" />
+                  <TableColumn prefWidth="132.0" text="Price/Cost per Unit" />
                </columns>
             </TableView>
             <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" text="Add" />
-                  <Button mnemonicParsing="false" text="Modify" />
-                  <Button mnemonicParsing="false" text="Delete" />
+                  <Button fx:id="AddProductButton" mnemonicParsing="false" text="Add" />
+                  <Button fx:id="ModifyProductButton" mnemonicParsing="false" text="Modify" />
+                  <Button fx:id="DeleteProductButton" mnemonicParsing="false" text="Delete" />
                </children>
             </HBox>
          </children>

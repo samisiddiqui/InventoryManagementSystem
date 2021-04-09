@@ -14,8 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
    <rowConstraints>
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
@@ -58,7 +57,7 @@
                   <TextField promptText="Search by Part ID or Name" />
                </children>
             </HBox>
-            <TableView prefHeight="200.0" prefWidth="200.0">
+            <TableView fx:id="PartsTableView" prefHeight="200.0" prefWidth="200.0">
               <columns>
                 <TableColumn prefWidth="75.0" text="Part ID" />
                 <TableColumn prefWidth="75.0" text="Part Name" />
@@ -69,7 +68,7 @@
             <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Button fx:id="AddPartButton" mnemonicParsing="false" onAction="#CallAddPartForm" text="Add" />
-                  <Button fx:id="ModifyPartButton" mnemonicParsing="false" text="Modify" />
+                  <Button fx:id="ModifyPartButton" mnemonicParsing="false" onAction="#CallModifyPartForm" text="Modify" />
                   <Button fx:id="DeletePartButton" mnemonicParsing="false" text="Delete" />
                </children>
             </HBox>

@@ -69,11 +69,11 @@ public class MainController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         PartsTableView.setItems(partList);
 
-        PartsIDColumn.setCellFactory(new PropertyValueFactory<>("machineID"));
-        PartsNameColumn.setCellFactory(new PropertyValueFactory<>("name"));
-        PartsCostColumn.setCellFactory(new PropertyValueFactory<>("price"));
-        PartsStockColumn.setCellFactory(new PropertyValueFactory<>("stock"));
+        PartsIDColumn.setCellValueFactory(new PropertyValueFactory<>("machineID"));
+        PartsNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        PartsStockColumn.setCellValueFactory(new PropertyValueFactory<>("stock"));
+        PartsCostColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        //partList.add(new InHouse(7, "Grease", 2.99, 10, 1, 15, 20));
+        partList.add(new InHouse(7, "Grease", 2.99, 10, 1, 15, 20));
     }
 }

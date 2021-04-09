@@ -14,6 +14,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.collections.FXCollections?>
+<?import sample.Part?>
+<?import sample.InHouse?>
 <GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
    <rowConstraints>
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
@@ -59,10 +62,10 @@
             </HBox>
             <TableView fx:id="PartsTableView" prefHeight="200.0" prefWidth="200.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="Part ID" />
-                <TableColumn prefWidth="75.0" text="Part Name" />
-                  <TableColumn prefWidth="119.0" text="Inventory Level" />
-                  <TableColumn prefWidth="138.0" text="Price/Cost per Unit" />
+                <TableColumn fx:id="PartsIDColumn" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="PartsNameColumn" prefWidth="75.0" text="Part Name" />
+                <TableColumn fx:id="PartsStockColumn" prefWidth="119.0" text="Inventory Level" />
+                <TableColumn fx:id="PartsCostColumn" prefWidth="138.0" text="Price/Cost per Unit" />
               </columns>
             </TableView>
             <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">

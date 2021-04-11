@@ -1,16 +1,17 @@
 package sample;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Inventory {
-    private ObservableList<Part> allParts;
-    private ObservableList<Product> allProducts;
+    private static ObservableList<Part> allParts = FXCollections.observableArrayList();
+    private static ObservableList<Product> allProducts = FXCollections.observableArrayList();
 
-    public void addPart(Part newPart) {
+    public static void addPart(Part newPart) {
         allParts.add(newPart);
     }
 
-    /*public static void addProduct(Product newProduct) {
+    public static void addProduct(Product newProduct) {
         allProducts.add(newProduct);
     }
 
@@ -35,9 +36,10 @@ public class Inventory {
     }
 
     public static ObservableList<Part> lookupPart(String partName) {
-        ObservableList<Part> x = null;
+        ObservableList<Part> x = FXCollections.observableArrayList();
         for (Part z : allParts) {
             if (z.getName().contains(partName)) {
+                System.out.println(z.getName());
                 x.add(z);
             }
         }
@@ -45,7 +47,7 @@ public class Inventory {
     }
 
     public static ObservableList<Product> lookupProduct(String productName) {
-        ObservableList<Product> x = null;
+        ObservableList<Product> x = FXCollections.observableArrayList();
         for (Product z : allProducts) {
             if (z.getName().contains(productName)) {
                 x.add(z);
@@ -101,5 +103,5 @@ public class Inventory {
 
     public static ObservableList<Product> getAllProducts() {
         return allProducts;
-    }*/
+    }
 }

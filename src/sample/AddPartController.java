@@ -43,10 +43,13 @@ public class AddPartController {
         InHouse newInHouse = null;
         Outsourced newOutsourced = null;
 
-        if (AddPartInHouse.isSelected() == true)
+        if (AddPartInHouse.isSelected() == true) {
             newInHouse = new InHouse(IDCounter, newName, newPrice, newStock, newMin, newMax, Integer.parseInt(AddPartToggleTextField.getText()));
-        else {
+            Inventory.addPart(newInHouse);
+        } else {
             newOutsourced = new Outsourced(IDCounter, newName, newPrice, newStock, newMin, newMax, AddPartToggleTextField.getText());
+            Inventory.addPart(newOutsourced);
         }
+        IDCounter++;
     }
 }

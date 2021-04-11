@@ -25,7 +25,7 @@ public class MainController implements Initializable {
     public TableColumn PartsStockColumn;
     public TableColumn PartsCostColumn;
 
-    private ObservableList<Part> partList = FXCollections.observableArrayList();
+    private final ObservableList<Part> allParts = FXCollections.observableArrayList();
     //private ObservableList<Product> productList = FXCollections.observableArrayList();
 
 
@@ -67,13 +67,17 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        PartsTableView.setItems(partList);
+        InHouse n = new InHouse(1, "2", 3,4,5,6,7);
+        Inventory x = new Inventory();
+        x.addPart(n);
+        PartsTableView.setItems(allParts);
 
-        PartsIDColumn.setCellValueFactory(new PropertyValueFactory<>("machineID"));
+        PartsIDColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         PartsNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         PartsStockColumn.setCellValueFactory(new PropertyValueFactory<>("stock"));
         PartsCostColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        partList.add(new InHouse(7, "Grease", 2.99, 10, 1, 15, 20));
+        allParts.add(new InHouse(7, "Grease", 2.99, 10, 1, 15, 20));
+        allParts.add(new Outsourced(70, "Zagoo", 2.99, 10, 1, 15, "20"));
     }
 }

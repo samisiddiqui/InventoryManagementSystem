@@ -36,7 +36,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <RadioButton fx:id="AddPartInHouse" mnemonicParsing="false" selected="true" onAction="#AddPartToggleLabelToggle" text="In-House" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+      <RadioButton fx:id="AddPartInHouse" mnemonicParsing="false" onAction="#AddPartToggleLabelToggle" selected="true" text="In-House" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
          <toggleGroup>
             <ToggleGroup fx:id="AddPartToggle" />
          </toggleGroup>
@@ -46,21 +46,21 @@
       <Label text="Name" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
       <Label text="Inv" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
       <Label text="Price/Cost" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-      <Label text="Max" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+      <Label text="Min" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
       <Label fx:id="AddPartToggleLabel" text="Machine ID" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
-      <TextField disable="true" editable="false" promptText="Fart" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <TextField GridPane.columnIndex="2" GridPane.rowIndex="3" />
-      <TextField GridPane.columnIndex="2" GridPane.rowIndex="4" />
-      <TextField GridPane.columnIndex="2" GridPane.rowIndex="5" />
-      <TextField GridPane.columnIndex="2" GridPane.rowIndex="6" />
-      <TextField GridPane.columnIndex="2" GridPane.rowIndex="7" />
+      <TextField fx:id="AddPartIDTextField" disable="true" editable="false" promptText="Auto Gen - Disabled" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <TextField fx:id="AddPartNameTextField" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <TextField fx:id="AddPartInventoryTextField" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <TextField fx:id="AddPartPriceTextField" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <TextField fx:id="AddPartMinTextField" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <TextField fx:id="AddPartToggleTextField" GridPane.columnIndex="2" GridPane.rowIndex="7" />
       <Label text="Max" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-      <TextField GridPane.columnIndex="4" GridPane.rowIndex="6">
+      <TextField fx:id="AddPartMaxTextField" GridPane.columnIndex="4" GridPane.rowIndex="6">
          <GridPane.margin>
             <Insets right="5.0" />
          </GridPane.margin>
       </TextField>
-      <Button mnemonicParsing="false" text="Save" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
+      <Button fx:id="AddPartSaveButton" mnemonicParsing="false" onAction="#AddPartSave" text="Save" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
       <Button fx:id="AddPartCancelButton" mnemonicParsing="false" onAction="#AddPartCancel" text="Cancel" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
    </children>
 </GridPane>

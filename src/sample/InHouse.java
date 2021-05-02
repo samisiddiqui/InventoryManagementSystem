@@ -1,5 +1,8 @@
 package sample;
 
+/**
+ * @author Sami Siddiqui
+ */
 public class InHouse extends Part{
 
     private int machineID;
@@ -8,10 +11,18 @@ public class InHouse extends Part{
         this.machineID = machineID;
     }
 
+    /**
+     *
+     * @param machineID the machineID to set
+     */
     public void setMachineID(int machineID) {
         this.machineID = machineID;
     }
 
+    /**
+     *
+     * @return the machineID
+     */
     public int getMachineID() {
         return machineID;
     }

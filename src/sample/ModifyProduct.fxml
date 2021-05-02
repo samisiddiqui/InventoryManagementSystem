@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+          prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="sample.ModifyProductController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="394.0" minWidth="10.0" prefWidth="296.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="500.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="275.0" minHeight="10.0" prefHeight="275.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="275.0" minHeight="10.0" prefHeight="275.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="50.0" minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <VBox prefHeight="200.0" prefWidth="100.0">
+        <padding>
+            <Insets bottom="10.0" top="10.0"/>
+        </padding>
+        <GridPane.margin>
+            <Insets right="20.0"/>
+        </GridPane.margin>
+        <Label text="Modify Product">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+            <VBox.margin>
+                <Insets left="20.0"/>
+            </VBox.margin>
+        </Label>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <VBox.margin>
+                <Insets top="5.0"/>
+            </VBox.margin>
+            <Label text="ID">
+                <HBox.margin>
+                    <Insets left="20.0"/>
+                </HBox.margin>
+            </Label>
+            <Region prefHeight="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="ModifyProductIDTextField" disable="true"/>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+            <Label text="Name">
+                <HBox.margin>
+                    <Insets left="20.0"/>
+                </HBox.margin>
+            </Label>
+            <Region prefHeight="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="ModifyProductNameTextField"/>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="77.0" prefHeight="100.0" prefWidth="200.0">
+            <Label text="Inv">
+                <HBox.margin>
+                    <Insets left="20.0"/>
+                </HBox.margin>
+            </Label>
+            <Region prefHeight="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="ModifyProductInventoryTextField"/>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="98.0" prefHeight="100.0" prefWidth="200.0">
+            <Label text="Price">
+                <HBox.margin>
+                    <Insets left="20.0"/>
+                </HBox.margin>
+            </Label>
+            <Region prefHeight="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="ModifyProductPriceTextField"/>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="109.0" prefHeight="100.0" prefWidth="200.0">
+            <Label text="Min">
+                <HBox.margin>
+                    <Insets left="20.0"/>
+                </HBox.margin>
+            </Label>
+            <Region prefHeight="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="ModifyProductMinTextField"/>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="116.0" prefHeight="100.0" prefWidth="200.0">
+            <Label text="Max">
+                <HBox.margin>
+                    <Insets left="20.0"/>
+                </HBox.margin>
+            </Label>
+            <Region prefHeight="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="ModifyProductMaxTextField"/>
+        </HBox>
+    </VBox>
+    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+        <GridPane.margin>
+            <Insets right="20.0" top="5.0"/>
+        </GridPane.margin>
+        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+            <TextField fx:id="ModifyProductSearchTextField" maxWidth="250.0" onAction="#ModifyProductSearch"
+                       prefWidth="250.0" promptText="Search by Part ID or Name"/>
+        </HBox>
+        <TableView fx:id="ModifyProductPartTableView" prefHeight="200.0" prefWidth="200.0">
+            <columns>
+                <TableColumn fx:id="ModifyProductPartIDColumn" prefWidth="125.0" text="Part ID"/>
+                <TableColumn fx:id="ModifyProductPartNameColumn" prefWidth="125.0" text="Part Name"/>
+                <TableColumn fx:id="ModifyProductPartInventoryColumn" prefWidth="125.0" text="Inventory Level"/>
+                <TableColumn fx:id="ModifyProductPartPriceColumn" prefWidth="125.0" text="Price/Cost Per Unit"/>
+            </columns>
+        </TableView>
+        <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+            <opaqueInsets>
+                <Insets/>
+            </opaqueInsets>
+            <VBox.margin>
+                <Insets top="5.0"/>
+            </VBox.margin>
+            <Button fx:id="ModifyProductAddPartButton" mnemonicParsing="false" onAction="#ModifyProductAddPart"
+                    text="Add"/>
+        </HBox>
+    </VBox>
+    <VBox layoutX="310.0" layoutY="15.0" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1"
+          GridPane.rowIndex="1">
+        <padding>
+            <Insets right="20.0"/>
+        </padding>
+        <TableView fx:id="ModifyProductAssociatedPartTableView" prefHeight="200.0" prefWidth="200.0">
+            <columns>
+                <TableColumn fx:id="ModifyProductAssociatedIDColumn" prefWidth="125.0" text="Part ID"/>
+                <TableColumn fx:id="ModifyProductAssociatedNameColumn" prefWidth="125.0" text="Part Name"/>
+                <TableColumn fx:id="ModifyProductAssociatedInventoryColumn" prefWidth="125.0"
+                             text="Inventory Level"/>
+                <TableColumn fx:id="ModifyProductAssociatedPriceColumn" prefWidth="125.0"
+                             text="Price/Cost Per Unit"/>
+            </columns>
+        </TableView>
+        <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+            <opaqueInsets>
+                <Insets/>
+            </opaqueInsets>
+            <VBox.margin>
+                <Insets top="5.0"/>
+            </VBox.margin>
+            <Button fx:id="ModifyProductRemovePartButton" mnemonicParsing="false"
+                    onAction="#ModifyProductRemovePart" text="Remove Associated Part">
+                <HBox.margin>
+                    <Insets/>
+                </HBox.margin>
+            </Button>
+        </HBox>
+    </VBox>
+    <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <GridPane.margin>
+            <Insets right="20.0"/>
+        </GridPane.margin>
+        <Button fx:id="ModifyProductSaveButton" mnemonicParsing="false" onAction="#ModifyProductSave" text="Save"/>
+        <Region prefHeight="200.0" prefWidth="50.0"/>
+        <Button fx:id="ModifyProductCancelButton" mnemonicParsing="false" onAction="#ModifyProductCancel"
+                text="Cancel"/>
+    </HBox>
+    <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="1">
+        <GridPane.margin>
+            <Insets left="20.0"/>
+        </GridPane.margin>
+        <Label fx:id="InventoryIntegerLabel" text="Inv must be Integer" visible="false"/>
+        <Label fx:id="InventoryRangeLabel" layoutX="10.0" layoutY="10.0" text="Inv must be between Min and Max"
+               visible="false"/>
+        <Label fx:id="PriceDoubleLabel" layoutX="10.0" layoutY="27.0" text="Price must be Double" visible="false"/>
+        <Label fx:id="MinIntegerLabel" layoutX="10.0" layoutY="44.0" text="Min must be Integer" visible="false"/>
+        <Label fx:id="MinRangeLabel" layoutX="10.0" layoutY="61.0" text="Min must be less than Max"
+               visible="false"/>
+        <Label fx:id="MaxIntegerLabel" layoutX="10.0" layoutY="78.0" text="Max must be Integer" visible="false"/>
+        <Label fx:id="MaxRangeLabel" layoutX="10.0" layoutY="95.0" text="Max must be greater than Min"
+               visible="false"/>
+    </VBox>
+</GridPane>

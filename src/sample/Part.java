@@ -1,9 +1,7 @@
-package sample; /**
-* Supplied class Part.java 
- */
+package sample;
 
 /**
- *
+ * Supplied class Part.java
  * @author Sami Siddiqui
  */
 public abstract class Part {

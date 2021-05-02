@@ -9,58 +9,90 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddPartController">
-  <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-  </columnConstraints>
-  <rowConstraints>
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-  </rowConstraints>
-   <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" text="Add Part" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <RadioButton fx:id="AddPartInHouse" mnemonicParsing="false" onAction="#AddPartToggleLabelToggle" selected="true" text="In-House" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-         <toggleGroup>
-            <ToggleGroup fx:id="AddPartToggle" />
-         </toggleGroup>
-      </RadioButton>
-      <RadioButton fx:id="AddPartOutsourced" mnemonicParsing="false" onAction="#AddPartToggleLabelToggle" text="Outsourced" toggleGroup="$AddPartToggle" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-      <Label text="ID" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-      <Label text="Name" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-      <Label text="Inv" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-      <Label text="Price/Cost" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-      <Label text="Min" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
-      <Label fx:id="AddPartToggleLabel" text="Machine ID" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
-      <TextField fx:id="AddPartIDTextField" disable="true" editable="false" promptText="Auto Gen - Disabled" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <TextField fx:id="AddPartNameTextField" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-      <TextField fx:id="AddPartInventoryTextField" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-      <TextField fx:id="AddPartPriceTextField" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-      <TextField fx:id="AddPartMinTextField" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-      <TextField fx:id="AddPartToggleTextField" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-      <Label text="Max" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-      <TextField fx:id="AddPartMaxTextField" GridPane.columnIndex="4" GridPane.rowIndex="6">
-         <GridPane.margin>
-            <Insets right="5.0" />
-         </GridPane.margin>
-      </TextField>
-      <Button fx:id="AddPartSaveButton" mnemonicParsing="false" onAction="#AddPartSave" text="Save" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
-      <Button fx:id="AddPartCancelButton" mnemonicParsing="false" onAction="#AddPartCancel" text="Cancel" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
-   </children>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+          prefWidth="600.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="sample.AddPartController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <Label alignment="CENTER" contentDisplay="CENTER" text="Add Part" textAlignment="CENTER" GridPane.columnIndex="1"
+           GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+        <font>
+          <Font name="System Bold" size="18.0"/>
+        </font>
+    </Label>
+    <RadioButton fx:id="AddPartInHouse" mnemonicParsing="false" onAction="#AddPartToggleLabelToggle" selected="true"
+                 text="In-House" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+        <toggleGroup>
+          <ToggleGroup fx:id="AddPartToggle"/>
+        </toggleGroup>
+    </RadioButton>
+    <RadioButton fx:id="AddPartOutsourced" mnemonicParsing="false" onAction="#AddPartToggleLabelToggle"
+                 text="Outsourced" toggleGroup="$AddPartToggle" GridPane.columnIndex="3" GridPane.halignment="CENTER"
+                 GridPane.valignment="CENTER"/>
+    <Label text="ID" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1"
+           GridPane.valignment="CENTER"/>
+    <Label text="Name" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2"
+           GridPane.valignment="CENTER"/>
+    <Label text="Inv" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3"
+           GridPane.valignment="CENTER"/>
+    <Label text="Price/Cost" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4"
+           GridPane.valignment="CENTER"/>
+    <Label text="Min" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5"
+           GridPane.valignment="CENTER"/>
+    <Label fx:id="AddPartToggleLabel" text="Machine ID" GridPane.columnIndex="1" GridPane.halignment="LEFT"
+           GridPane.rowIndex="6" GridPane.valignment="CENTER"/>
+    <TextField fx:id="AddPartIDTextField" disable="true" editable="false" promptText="Auto Gen - Disabled"
+               GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+    <TextField fx:id="AddPartNameTextField" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+    <TextField fx:id="AddPartInventoryTextField" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+    <TextField fx:id="AddPartPriceTextField" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+    <TextField fx:id="AddPartMinTextField" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+    <TextField fx:id="AddPartToggleTextField" GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+    <Label text="Max" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5"/>
+    <TextField fx:id="AddPartMaxTextField" GridPane.columnIndex="4" GridPane.rowIndex="5">
+        <GridPane.margin>
+          <Insets right="5.0"/>
+        </GridPane.margin>
+    </TextField>
+    <Button fx:id="AddPartSaveButton" mnemonicParsing="false" onAction="#AddPartSave" text="Save"
+            GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER"/>
+    <Button fx:id="AddPartCancelButton" mnemonicParsing="false" onAction="#AddPartCancel" text="Cancel"
+            GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER"/>
+    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+        <Label fx:id="InventoryIntegerLabel" text="Inv must be Integer" visible="false"/>
+        <Label fx:id="InventoryRangeLabel" layoutX="10.0" layoutY="10.0" text="Inv must be between Min and Max"
+               visible="false" wrapText="true"/>
+    </VBox>
+    <Label fx:id="PriceDoubleLabel" text="Price must be Double" visible="false" GridPane.rowIndex="4"/>
+    <VBox layoutX="10.0" layoutY="160.0" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="5">
+        <Label fx:id="MinIntegerLabel" text="Min must be Integer" visible="false"/>
+        <Label fx:id="MinRangeLabel" layoutX="10.0" layoutY="10.0" text="Min must be less than Max" visible="false"
+               wrapText="true"/>
+    </VBox>
+    <Label fx:id="ToggleIdentityLabel" layoutX="10.0" layoutY="227.0" text="ToggleIdentityLabel" visible="false"
+           GridPane.rowIndex="6"/>
+    <VBox layoutX="10.0" layoutY="260.0" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3"
+          GridPane.rowIndex="4">
+        <Label fx:id="MaxIntegerLabel" text="Max must be Integer" visible="false"/>
+        <Label fx:id="MaxRangeLabel" layoutX="10.0" layoutY="10.0" text="Max must be greater than Min"
+               visible="false" wrapText="true"/>
+    </VBox>
 </GridPane>
